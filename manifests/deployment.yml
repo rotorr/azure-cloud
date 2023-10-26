@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rotorrazurecloud 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rotorrazurecloud
+  template:
+    metadata:
+      labels:
+        app: rotorrazurecloud 
+    spec:
+      containers:
+        - name: rotorrazurecloud 
+          image: rolandoazurepetstorecr.azurecr.io/rotorrazurecloud
+          ports:
+          - containerPort: 80
